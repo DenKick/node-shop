@@ -1,6 +1,13 @@
 include meta
-include header
-include menu
+
+div(class="home")
+  a(class="home" href="/") Home
+
+div(class="genre")
+  each val, index in genre
+    div(class="genre__content")
+      span(class="genre__name") #{val['name']}
+      span(class="genre__description") #{val['description']}
 
 div(class="main-content" id="main-content")
   each val, index in films

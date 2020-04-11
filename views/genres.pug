@@ -1,0 +1,11 @@
+include meta
+
+div(class="home")
+  a(class="home" href="/") Home
+
+div(class="genres-menu")
+  span(class="genres-menu__heading") Genres
+  each val, index in genres
+    a(class="genres-menu__link-block" href='genre?id=' + val['id']) #{val['name']}
+
+include footer

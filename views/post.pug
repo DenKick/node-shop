@@ -1,0 +1,13 @@
+include meta
+
+form(class="send" action="/post_success" method="post")
+  input(type="text" name="name" placeholder="Your name" require)
+  input(type="phone" name="phone" placeholder="Your phone" require)
+  input(type="text" name="city" placeholder="Your city" require)
+  input(type="text" name="state" placeholder="Your state" require)
+  input(type="text" name="street" placeholder="Your street" require)
+  input(type="text" name="house" placeholder="Your house" require)
+  input(type="number" name="zip" placeholder="Your zip" require)
+  input(type="submit")
+
+include footer

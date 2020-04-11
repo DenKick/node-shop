@@ -1,0 +1,30 @@
+include meta
+
+div(class="home")
+  a(class="home" href="/") Home
+
+div(class="background" id="background-popup" onclick="closePopup()")
+
+div(class="popup-container" id="popup")
+
+
+div(class="film-main-page")
+  div(class="film-main-page__img")
+    img(
+      class="img__poster"
+      src="images/" + film['image']
+      alt=film['name'] + ' poster'
+    )
+  div(class="film-main-page__info")
+    span(class="info__name") #{film['name']}
+    span(class="info__tagline") #{film['tagline']}
+    - var release = film['release_date'].slice(0, 4) + '.' + film['release_date'].slice(5, 7) + '.' + film['release_date'].slice(8, 10)
+    span(class="info__director") Director: #{film['director']} 
+    span(class="info__release") Release Date: #{release}
+    span(class="info__genre") Genre: #{film['genre']}
+    span(class="info__desc") #{film['description']}
+    button(class="info__btn" onclick=`order("${film['name']}", ${film['price']})`) Buy $#{film['price']}
+script(src="js/popup.js")
+script(src="js/scripts.js")
+
+include footer
